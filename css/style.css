@@ -689,4 +689,9 @@ a:focus {
 .footer_section p a {
   color: #111111;
 }
+
+#map svg {
+    background-color: #f9f9f9;
+}
+
 /*# sourceMappingURL=style.css.map */
