@@ -26,6 +26,14 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+
+  <!--globe with interaction-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://d3js.org/topojson.v3.min.js"></script>
+
+
 </head>
 
 <body>
@@ -346,6 +354,9 @@
           <div class="map_container">
             <div class="map-responsive">
               <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=ChungBuk+National+University+SouthKorea" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
+              <div id="map" style="width: 100%; height: 400px;">
+                
+              </div>
             </div>
           </div>
         </div>
@@ -436,6 +447,8 @@
           <p>
             &copy; 2024 Restrict Rights Reserved By SeungwonLee
             <a href="https://html.design/">Referenced: Free Html Templates</a>
+            <div id="map">
+            </div>
           </p>
         </div>
       </div>
@@ -446,6 +459,8 @@
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>
+  <script src="js/geomap.js"></script>
+
 
 </body>
 
