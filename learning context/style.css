@@ -1,0 +1,100 @@
+/* style.css */  
+body {  
+    font-family: 'Arial', sans-serif; /* Modern, clean font */  
+    margin: 0; /* Reset default body margin */  
+    padding: 0; /* Reset default body padding */  
+    line-height: 1.6; /* Improved readability */  
+    color: #333; /* Darker, more readable text color */  
+    background-color: #f8f8f8; /* Light, modern background */  
+}  
+
+header {  
+    background-color: #fff; /* White header background */  
+    padding: 20px;  
+    text-align: center;  
+    border-bottom: 1px solid #eee; /* Light border for separation */  
+}  
+
+header h1 {  
+    margin: 0; /* Remove default heading margin */  
+    font-size: 2em; /* Slightly larger heading */  
+    color: #333; /* Heading text color */  
+}  
+
+nav {  
+    margin-top: 15px; /* Space between heading and nav */  
+    overflow-x: auto; /* Enable horizontal scroll */  
+    white-space: nowrap; /* Prevent links from wrapping */  
+    padding: 10px 0; /* Add some padding for scrollbar visibility */  
+}  
+
+nav a {  
+    color: #555; /* Navigation link color */  
+    text-decoration: none; /* Remove underlines */  
+    padding: 10px 15px; /* Padding around nav links */  
+    border-radius: 5px; /* Rounded corners for links */  
+    transition: background-color 0.3s ease; /* Smooth hover effect */  
+    display: inline-block; /* Ensure links stay in a row */  
+}  
+
+nav a:hover {  
+    background-color: #eee; /* Lighter background on hover */  
+    color: #333; /* Link color on hover */  
+}  
+
+main {  
+    padding: 20px;  
+    max-width: 800px; /* Limit content width for better readability */  
+    margin: 20px auto; /* Center the content on the page */  
+    background-color: #fff; /* White background for content area */  
+    border-radius: 5px; /* Rounded corners for content area */  
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for depth */  
+}  
+
+main h2 {  
+    font-size: 1.8em;  
+    margin-top: 0; /* Remove top margin for main headings */  
+    margin-bottom: 20px;  
+    color: #333;  
+    border-bottom: 1px solid #eee; /* Separator for headings */  
+    padding-bottom: 10px;  
+}  
+
+main p {  
+    margin-bottom: 15px;  
+}  
+
+footer {  
+    text-align: center;  
+    padding: 20px;  
+    background-color: #f0f0f0; /* Light gray footer background */  
+    color: #777; /* Lighter footer text color */  
+    font-size: 0.9em; /* Slightly smaller footer text */  
+    border-top: 1px solid #eee; /* Light border for separation */  
+    margin-top: 30px; /* Space above footer */  
+}  
+
+/* Optional: Style the scrollbar (for WebKit browsers like Chrome, Safari) */  
+nav::-webkit-scrollbar {  
+    height: 8px; /* Adjust scrollbar height */  
+}  
+
+nav::-webkit-scrollbar-track {  
+    background: #f1f1f1; /* Scrollbar track color */  
+    border-radius: 5px;  
+}  
+
+nav::-webkit-scrollbar-thumb {  
+    background: #aaa; /* Scrollbar thumb color */  
+    border-radius: 5px;  
+}  
+
+nav::-webkit-scrollbar-thumb:hover {  
+    background: #888; /* Scrollbar thumb hover color */  
+}  
+
+/* Optional: Style scrollbar for Firefox */  
+nav {  
+    scrollbar-color: #aaa #f1f1f1; /* thumb and track color */  
+    scrollbar-width: thin; /* or auto, or none */  
+}  
