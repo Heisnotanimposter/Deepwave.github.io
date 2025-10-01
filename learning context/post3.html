@@ -1,0 +1,63 @@
+<!-- post3.html -->  
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Learning about JavaScript - Simon Lee</title>  
+    <link rel="stylesheet" href="style.css">  
+</head>  
+<body>  
+    <header>  
+        <h1>Simon Lee</h1>  
+<nav>  
+    <a href="index.html">Home</a> |  
+    <a href="post1.html">Post 1</a> |  
+    <a href="post2.html">Post 2</a> |  
+    <a href="post3.html">Post 3</a> |  
+    <a href="post4.html">Post 4</a> |  
+    <a href="post5.html">Post 5</a> |  
+    <a href="post6.html">Post 6</a> |  
+    <a href="post7.html">Post 7</a> |  
+    <a href="post8.html">Post 8</a> |  
+    <a href="post9.html">Post 9</a> |  
+    <a href="post10.html">Post 10</a> |  
+    </nav>   
+    </header>  
+    <main>  
+        <h2>Typical HDLC Frame Structure</h2>  
+        <pre style ="white-space: pre-wrap;">Typical HDLC Frame Structure:
+
+Flag:
+This is an 8-bit sequence (01111110) that marks the beginning and end of an HDLC frame.
+It's used for frame synchronization, allowing the receiver to identify the start and end of a transmission.
+Address Field:
+This field contains the address of the secondary station (or stations) involved in the communication.
+The length of this field can vary.
+Control Field:
+This field contains control information, such as:
+The type of HDLC frame (I-frame, S-frame, or U-frame).
+Sequence numbers for flow and error control.
+The length of this field can be 1 or 2 bytes.
+Information Field (Payload):
+This field carries the actual user data being transmitted.
+Its length is variable. It may not be present in all HDLC frames (e.g., S-frames).
+Frame Check Sequence (FCS):
+This field contains a Cyclic Redundancy Check (CRC) value.
+The CRC is used for error detection. The receiver calculates its own CRC and compares it to the received FCS to verify data integrity.
+Typically 16 bits, but can be 32 bits.
+Flag:
+A closing flag, that is the same sequence as the opening flag.
+Key Considerations:
+
+Bit Stuffing:
+HDLC uses bit stuffing to prevent data within the frame from being mistaken for flag sequences.
+The sender inserts a "0" bit after any sequence of five consecutive "1" bits within the frame (excluding the flags).
+The receiver removes these inserted "0" bits.
+Frame Types:
+HDLC defines three main frame types:
+I-frames (Information frames): Carry user data.
+S-frames (Supervisory frames): Used for flow and error control.
+U-frames (Unnumbered frames): Used for control and management functions.</pre>  
+    </main>  
+    <footer>...</footer>  
+</body>  
+</html>  
