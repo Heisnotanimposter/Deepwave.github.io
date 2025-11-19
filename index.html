@@ -1,514 +1,522 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">Simon Lee | General Resume | EN</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <title>Simon Lee</title>
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #007bff;
+            --text-color: #1a1a1a;
+            --secondary-text-color: #555;
+            --border-color: #ccc;
+            --font-family: 'Roboto', sans-serif;
+            --max-width: 900px;
+        }
 
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+        /* Base Styling */
+        body {
+            font-family: var(--font-family);
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            font-size: 11pt;
+        }
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        .resume-container {
+            width: 100%;
+            max-width: var(--max-width);
+            background: white;
+            padding: 40px;
+            margin: 20px auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
 
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+        /* Navigation Feature (Sticky Header) */
+        .main-header {
+            background: var(--text-color);
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky; 
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navigation {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+        }
+        
+        /* Language Switcher Styling */
+        .language-switcher {
+            display: flex;
+            gap: 5px;
+        }
+        .lang-button {
+            background: none;
+            color: white;
+            border: 1px solid white;
+            padding: 5px 8px;
+            cursor: pointer;
+            font-size: 0.8em;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .lang-button.active, .lang-button:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 5px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.2s; 
+        }
+
+        .nav-link:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px); 
+        }
+
+        /* Typography & Layout */
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        /* Contact/Header Info */
+        .contact-info {
+            text-align: center;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        .contact-info span {
+            margin: 0 10px;
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+        /* Section Layout */
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .project-item, .social-item, .cert-item, .lang-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        
+        .project-item h3 {
+            font-size: 1.1em;
+            font-weight: 700;
+        }
+        .project-item p, .cert-item p, .lang-item p {
+            margin: 0 0 5px 0;
+            font-size: 0.95em;
+        }
+
+        /* Animation Feature (Fade In) */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animated-section p {
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        /* Button OnClick Method Styling */
+        .action-area {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.8em;
+            color: var(--secondary-text-color);
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
 </head>
-
 <body>
 
-  <div class="main_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" alt="">
-            <span>
-              Simon Lee
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="s-1"> </span>
-            <span class="s-2"> </span>
-            <span class="s-3"> </span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav  ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="service.html"> Projects </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="blog.html"> Blog </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact </a>
-                </li>
-              </ul>
+    <header class="main-header">
+        <nav class="navigation">
+            <div>
+                <a href="#summary-sec" class="nav-link" data-key="nav_summary">Summary</a>
+                <a href="#projects-sec" class="nav-link" data-key="nav_projects">Projects</a>
+                <a href="#certs-sec" class="nav-link" data-key="nav_certs">Certifications</a>
+                <a href="#links-sec" class="nav-link" data-key="nav_links">Links</a>
             </div>
-          </div>
+            <div class="language-switcher">
+                <button class="lang-button active" data-lang="en">EN</button>
+                <button class="lang-button" data-lang="kor">KOR</button>
+                <button class="lang-button" data-lang="jp">JP</button>
+                <button class="lang-button" data-lang="chn">CHN</button>
+            </div>
         </nav>
-      </div>
     </header>
-    <!-- end header section -->
-    <!-- slider section -->
-    <section class=" slider_section ">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 ">
-            <div class="detail_box">
-              <h1>
-                🤗 Visitors <br>
-                
-              </h1>
-              <p>
-                Hello, guys, have a good day! 🤗
-                Im currently Study Python<br>
-                and looking for...Robotics
-              </p>
-              <a href="" class="">
-                Contact
+
+    <div class="resume-container">
+
+        <header id="summary-sec">
+            <h1 id="header-name" data-key="header_name">Simon Lee</h1>
+            
+            <div class="contact-info">
+                <span>Email: <a href="mailto:redcar1024@gmail.com">redcar1024@gmail.com</a></span>
+                <span class="separator">|</span>
+                <span>Line ID: ngc1024</span>
+                <span class="separator">|</span>
+                <span>Kakao ID: redcar359</span>
+                <span class="separator">|</span>
+                <span><span data-key="contact_location">Location</span>: South Korea</span>
             </div>
-          </div>
-          <div class="col-lg-5 col-md-6 offset-lg-1">
-            <div class="img_content">
-              <div class="img_container">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <div class="img-box">
-                        <img src="images/slider-img.png" alt="">
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="img-box">
-                        <img src="images/slider-img1.png" alt="">
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="img-box">
-                        <img src="images/slider-img2.png" alt="">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="sr-only">Next</span>
-              </a>
+        </header>
+
+        <section class="section animated-section">
+            <h2 data-key="h2_summary">Summary</h2>
+            <p id="p_summary_1" class="animated-text">Hello, guys, have a good day! I am not currently focused on studying Python. Instead, I decide to study the entire general computer field. Especially, passionately exploring the field of Robotics and BioEngineering.</p>
+            <p id="p_summary_2" style="margin-top: 10px;">I am currently seeking opportunities to advance my computer science career on a global scale.</p>
+            
+            <div class="action-area">
+                <button id="alert-button" class="action-button" data-key="btn_focus">View Core Focus</button>
+            </div>
+        </section>
+
+        <section class="section" id="projects-sec">
+            <h2 data-key="h2_projects">Projects</h2>
+            
+            <div class="project-item">
+                <h3 data-key="proj_title_1">SPIED2024 TimeIncreasingCrosswalk</h3>
+                <p data-key="proj_desc_1">IRE ASIA Consortium certified GrandPrize: Face Recognition and System with dynamic timer interactive to crosswalkers.</p>
+                <p>GitHub: <a href="https://github.com/Heisnotanimposter/SPIED2024_TimeIncreasingCrosswalk" target="_blank">Heisnotanimposter/SPIED2024_TimeIncreasingCrosswalk</a></p>
+            </div>
+            <div class="project-item">
+                <h3 data-key="proj_title_2">ARC-2025 project</h3>
+                <p data-key="proj_desc_2">Final Entry Rank : 179 of 1456 teams</p>
+                <p>GitHub: <a href="https://github.com/OpenOurMinds/ARCprize2025_HIN" target="_blank">Heisnotanimposter/OpenOurMinds/ARCprize2025_HIN</a></p>
+            </div>          
+            <div class="project-item">
+                <h3 data-key="proj_title_3">RaspberryPi Robotics Project</h3>
+                <p data-key="proj_desc_3">Hardware control and system integration using Raspberry Pi.</p>
+                <p>GitHub: <a href="https://github.com/Heisnotanimposter/RPI" target="_blank">Heisnotanimposter/RPI</a></p>
             </div>
 
-          </div>
+            <div class="project-item">
+                <h3 data-key="proj_title_4">Autonomous Driving Object Detection Project</h3>
+                <p data-key="proj_desc_4">Implementation of Object Detection techniques, likely using YOLOv5 for autonomous systems.</p>
+                <p>GitHub: <a href="https://github.com/Heisnotanimposter/Totalcare_autonomous_driving_Yolov5" target="_blank">Heisnotanimposter/Totalcare_autonomous_driving_Yolov5</a></p>
+            </div>
+
+            <div class="project-item">
+                <h3 data-key="proj_title_5">Satellite Image Based Time-series Prediction Project</h3>
+                <p data-key="proj_desc_5">Modeling and prediction based on time-series data derived from satellite imagery.</p>
+                <p>GitHub: <a href="https://github.com/Heisnotanimposter/AIAD_weather2" target="_blank">Heisnotanimposter/AIAD_weather2</a></p>
+            </div>
+            
+            <div class="project-item">
+                <h3 data-key="proj_title_6">BioPython Project</h3>
+                <p data-key="proj_desc_6">Computational biology project utilizing the BioPython library for genetic analysis.</p>
+                <p>GitHub: <a href="https://github.com/Heisnotanimposter/GeneLab" target="_blank">Heisnotanimposter/GeneLab</a></p>
+            </div>
+            
+            <div class="project-item">
+                <h3 data-key="proj_title_7">Crypto-Based Quant Project</h3>
+                <p data-key="proj_desc_7">Quantitative analysis and trading strategy development focused on cryptocurrency markets.</p>
+                <p>GitHub: <a href="https://github.com/Heisnotanimposter/Upbit-Quant" target="_blank">Heisnotanimposter/Upbit-Quant</a></p>
+            </div>
+
+        </section>
+        
+        <section class="section" id="certs-sec">
+            <h2 data-key="h2_certs">Certifications</h2>
+            <div class="cert-item">
+                <p><strong data-key="cert_processor_title">HRD - Industrial Information Processor:</strong> <span data-key="cert_processor_desc">South Korean National Technical Qualification.</span></p>
+            </div>
+            <div class="cert-item">
+                <p><strong data-key="cert_adsp_title">KDATA - ADSP (Advanced Data Analytics Semi Professional):</strong> <span data-key="cert_adsp_desc">Data analysis and processing certification.</span></p>
+            </div>
+            <div class="cert-item">
+                <p><strong data-key="cert_opic_title">OPIC IH (Oral Proficiency Interview – Computer):</strong> <span data-key="cert_opic_desc">Speaking test score.</span></p>
+            </div>
+            <div class="cert-item">
+                <p><strong data-key="cert_ielts_title">IELTS 6.5 Mock Test Score:</strong> <span data-key="cert_ielts_desc">English proficiency test score.</span></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 data-key="h2_langs">Languages</h2>
+            <div class="lang-item">
+                <p><strong data-key="lang_kor_title">Korean:</strong> <span data-key="lang_kor_desc">Native.</span></p>
+            </div>
+            <div class="lang-item">
+                <p><strong data-key="lang_eng_title">English:</strong> <span data-key="lang_eng_desc">Advanced (IELTS 6.5 level equivalent).</span></p>
+            </div>
+        </section>
+
+        <section class="section" id="links-sec">
+            <h2 data-key="h2_links">Online Presence</h2>
+            
+            <div class="social-item">
+                <p><strong data-key="link_linkedin">LinkedIn:</strong> <a href="https://www.linkedin.com/in/simon-lee-003689288/" target="_blank">Simon Lee LinkedIn Profile</a></p>
+            </div>
+            <div class="social-item">
+                <p><strong data-key="link_huggingface">HuggingFace:</strong> <a href="https://huggingface.co/ngc1024" target="_blank">ngc1024 HuggingFace Page</a></p>
+            </div>
+            <div class="social-item">
+                <p><strong data-key="link_github">GitHub:</strong> <a href="https://github.com/Heisnotanimposter" target="_blank">Heisnotanimposter GitHub Profile</a></p>
+            </div>
+        </section>
+        
+        <div class="footer">
+            &copy; 2024 Rights Reserved By Simon Lee
         </div>
-      </div>
-    </section>
-    <!-- end slider section -->
-  </div>
-
-
-  <!-- service section -->
-  <section class="service_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Subject
-        </h2>
-        <img src="images/plug.png" alt="">
-      </div>
-
-      <div class="service_container">
-        <div class="box">
-          <div class="img-box">
-            <img src="images/s1.png" class="img1" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              RaspberryPi Robotics Project
-            </h5>
-            <p>
-              <a href="https://github.com/Heisnotanimposter/Arduino">Visit Arduino Project on github</a>
-            </p>
-          </div>
-        </div>
-        <div class="box">
-          <div class="img-box">
-            <img src="images/s2.png" class="img1" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              Autonomous Driving Object Detection Project
-            </h5>
-            <p>
-              <a href="https://github.com/Heisnotanimposter/Totalcare_autonomous_driving_Yolov5">Visit ObjectDetection Project on github</a>
-            </p>
-          </div>
-        </div>
-        <div class="box">
-          <div class="img-box">
-            <img src="images/s3.png" class="img1" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              Sattlite Image Based time-series Prediction Proejct
-            </h5>
-            <p>
-              <a href="https://github.com/Heisnotanimposter/AIAD_weather2">Visit time-series Prediction Project on github</a>
-            </p>
-          </div>
-        </div>
-        <div class="box ">
-          <div class="img-box">
-            <img src="images/s4.png" class="img1" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              BioPython Project
-            </h5>
-            <p>
-              <a href="https://github.com/Heisnotanimposter/GeneLab">Visit BioPython Project on github</a>
-            </p>
-          </div>
-        </div>
-        <div class="box">
-          <div class="img-box">
-            <img src="images/s5.png" class="img1" alt="">
-          </div>
-          <div class="detail-box">
-            <h5>
-              CryptoBased Quant Project
-            </h5>
-            <p>
-              <a href="https://github.com/Heisnotanimposter/Upbit-Quant">Visit Quant Project on github</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="btn-box">
-        <a href="">
-          
-        </a>
-      </div>
-    </div>
-  </section>
-  <!-- end service section -->
-
-  <!-- about section -->
-  <section class="about_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                Introduction
-              </h2>
-              <img src="images/plug.png" alt="">
-            </div>
-            <p>
-              live in South Korea, Male, uhm... i love turtles, amogus!
-            </p>
-            <a href="">
-              
-            </a>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="img_container">
-            <div class="img-box b1">
-              <img src="images/about-img1.png" alt="" />
-            </div>
-            <div class="img-box b2">
-              <img src="images/about-img2.png" alt="" />
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- end about section -->
-
-
-
-
-  <!-- blog section -->
-
-  <section class="blog_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Learning Blog
-        </h2>
-        <img src="images/plug.png" alt="">
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/blog1.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                The Instruction Cycle
-              </h5>
-              <p>
-                Understanding the fundamental process by which a computer's CPU retrieves and executes instructions from memory.
-              </p>
-              <a href="learning context/post1.html" class="read-more">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/blog2.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                Data Link Layer (OSI Model)
-              </h5>
-              <p>
-                Exploring Layer 2 of the OSI model, responsible for reliable data transfer between adjacent nodes.
-              </p>
-              <a href="learning context/post2.html" class="read-more">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/blog1.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                UNIX Kernel
-              </h5>
-              <p>
-                Deep dive into the core of the UNIX operating system and its main functions.
-              </p>
-              <a href="learning context/post4.html" class="read-more">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/blog2.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                LinkedIn Profile
-              </h5>
-              <p>
-                <a href="https://www.linkedin.com/in/simon-lee-003689288/">Visit LinkedIn page</a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/blog1.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                HuggingFace Profile
-              </h5>
-              <p>
-                <a href="https://huggingface.co/ngc1024">Visit Huggingface page</a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="box">
-            <div class="img-box">
-              <img src="images/blog2.jpg" alt="">
-            </div>
-            <div class="detail-box">
-              <h5>
-                View All Learning Posts
-              </h5>
-              <p>
-                Explore all learning content covering various computer science and technology topics.
-              </p>
-              <a href="blog.html" class="read-more">View All Posts</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end blog section -->
-
-
-
-  <!-- contact section -->
-
-  <section class="contact_section layout_padding">
-    <div class="container ">
-      <div class="heading_container">
-        <h2>
-          Contact Me
-        </h2>
-        <img src="images/plug.png" alt="">
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <form action="">
-            <div>
-              <input type="text" placeholder="Name" />
-            </div>
-            <div>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div>
-              <input type="text" placeholder="Phone Number" />
-            </div>
-            <div>
-              <input type="text" class="message-box" placeholder="Message" />
-            </div>
-            <div class="d-flex ">
-              <button>
-                SEND
-              </button>
-            </div>
-          </form>
-        </div>
-        <div class="col-md-6">
-          <div class="map_container">
-            <div class="map-responsive">
-              <iframe src="https://www.google.com/maps/embed/v1/place?key=[]&q=ChungBuk+National+University+SouthKorea" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end contact section -->
-
-
-  <!-- info section -->
-
-  <section class="info_section layout_padding">
-    <div class="container">
-      <div class="info_contact">
-        <div class="row">
-          <div class="col-md-4">
-            <a href="">
-              <img src="images/location-white.png" alt="">
-              <span>
-                Unavailable
-              </span>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="">
-              <img src="images/telephone-white.png" alt="">
-              <span>
-                Call : +82 ... (Unavailable)
-              </span>
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="">
-              <img src="images/envelope-white.png" alt="">
-              <span>
-                redcar1024@gmail.com
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-8 col-lg-9">
-          <div class="info_form">
-            <form action="">
-              <input type="text" placeholder="Enter your email">
-              <button type="button" onclick="window.location.href = 'https://www.youtube.com';">Subscribe</button>
-            </form>
-          </div>
-        </div>
-        <div class="col-md-4 col-lg-3">
-          <div class="info_social">
-            <div>
-              <a href="">
-                <img src="images/fb.png" alt="">
-              </a>
-            </div>
-            <div>
-              <a href="">
-                <img src="images/twitter.png" alt="">
-              </a>
-            </div>
-            <div>
-              <a href="">
-                <img src="images/linkedin.png" alt="">
-              </a>
-            </div>
-            <div>
-              <a href="">
-                <img src="images/instagram.png" alt="">
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </div>
-  </section>
 
-  <!-- end info section -->
+    <script>
+        const translations = {
+            'en': {
+                'title_suffix': 'EN',
+                'header_name': 'Simon Lee',
+                'nav_summary': 'Summary', 'nav_projects': 'Projects', 'nav_certs': 'Certifications', 'nav_links': 'Links',
+                'contact_location': 'Location',
+                'h2_summary': 'Summary',
+                'p_summary_1': 'Hello, guys, have a good day! I am not currently focused on studying Python. Instead, I decide to study the entire general computer field. Especially, passionately exploring the field of Robotics and BioEngineering.',
+                'p_summary_2': 'I am currently seeking opportunities to advance my computer science career on a global scale.',
+                'btn_focus': 'View Core Focus',
+                'alert_focus': 'Core Focus: Robotics, BioEngineering, and General Computer Science.',
+                'h2_projects': 'Projects',
+                'proj_title_1': 'SPIED2024 TimeIncreasingCrosswalk', 'proj_desc_1': 'IRE ASIA Consortium certified GrandPrize: Face Recognition and System with dynamic timer interactive to crosswalkers.',
+                'proj_title_2': 'ARC-2025 project', 'proj_desc_2': 'Final Entry Rank : 179 of 1456 teams', 
+                'proj_title_3': 'RaspberryPi Robotics Project', 'proj_desc_3': 'Hardware control and system integration using Raspberry Pi.',
+                'proj_title_4': 'Autonomous Driving Object Detection Project', 'proj_desc_4': 'Implementation of Object Detection techniques, likely using YOLOv5 for autonomous systems.',
+                'proj_title_5': 'Satellite Image Based Time-series Prediction Project', 'proj_desc_5': 'Modeling and prediction based on time-series data derived from satellite imagery.',
+                'proj_title_6': 'BioPython Project', 'proj_desc_6': 'Computational biology project utilizing the BioPython library for genetic analysis.',
+                'proj_title_7': 'Crypto-Based Quant Project', 'proj_desc_7': 'Quantitative analysis and trading strategy development focused on cryptocurrency markets.',
+                'h2_certs': 'Certifications',
+                'cert_processor_title': 'HRD - Industrial Information Processor:', 'cert_processor_desc': 'South Korean National Technical Qualification.',
+                'cert_adsp_title': 'KDATA - ADSP (Advanced Data Analytics Semi Professional):', 'cert_adsp_desc': 'Data analysis and processing certification.', // <-- FIXED
+                'cert_opic_title': 'OPIC IH (Oral Proficiency Interview – Computer):', 'cert_opic_desc': 'Speaking test score.',
+                'cert_ielts_title': 'IELTS 6.5 Mock Test Score:', 'cert_ielts_desc': 'English proficiency test score.',
+                'h2_langs': 'Languages',
+                'lang_kor_title': 'Korean:', 'lang_kor_desc': 'Native.',
+                'lang_eng_title': 'English:', 'lang_eng_desc': 'Advanced (IELTS 6.5 level equivalent).',
+                'h2_links': 'Online Presence',
+                'link_linkedin': 'LinkedIn:', 'link_huggingface': 'HuggingFace:', 'link_github': 'GitHub:',
+            },
+            'kor': {
+                'title_suffix': 'KOR',
+                'header_name': 'Seungwon Lee (이승원)',
+                'nav_summary': '개요', 'nav_projects': '프로젝트', 'nav_certs': '자격증', 'nav_links': '온라인',
+                'contact_location': '위치',
+                'h2_summary': '개요',
+                'p_summary_1': '안녕하세요, 좋은 하루 되세요! 현재 저는 Python 공부보다는 일반 컴퓨터 과학 분야 전반을 공부하기로 결정했습니다. 특히 로보틱스와 생명 공학 분야를 열정적으로 탐구하고 있습니다.',
+                'p_summary_2': '저는 현재 글로벌 규모로 컴퓨터 과학 경력을 발전시킬 기회를 모색하고 있습니다.',
+                'btn_focus': '핵심 관심사 보기',
+                'alert_focus': '핵심 관심사: 로보틱스, 생명 공학, 일반 컴퓨터 과학.',
+                'h2_projects': '프로젝트',
+                'proj_title_1': 'SPIED2024 시간증가 횡단보도', 'proj_desc_1': 'IRE ASIA Consortium 그랑프리 인증: 보행자를 위한 동적 타이머 상호 작용 기능이 있는 얼굴 인식 및 시스템.',
+                'proj_title_2': 'ARC-2025 프로젝트', 'proj_desc_2': '최종 참가 랭크 : 1456팀 중 179번째 팀', // <-- FIXED
+                'proj_title_3': '라즈베리파이 로보틱스 프로젝트', 'proj_desc_3': '라즈베리파이를 사용한 하드웨어 제어 및 시스템 통합.',
+                'proj_title_4': '자율 주행 객체 감지 프로젝트', 'proj_desc_4': '자율 시스템을 위한 YOLOv5를 활용한 객체 감지 기술 구현.',
+                'proj_title_5': '위성 이미지 기반 시계열 예측 프로젝트', 'proj_desc_5': '위성 이미지에서 파생된 시계열 데이터를 기반으로 한 모델링 및 예측.',
+                'proj_title_6': 'BioPython 프로젝트', 'proj_desc_6': '유전 분석을 위한 BioPython 라이브러리를 활용한 전산 생물학 프로젝트.',
+                'proj_title_7': '암호화폐 기반 퀀트 프로젝트', 'proj_desc_7': '암호화폐 시장에 중점을 둔 정량적 분석 및 거래 전략 개발.',
+                'h2_certs': '자격증',
+                'cert_processor_title': 'HRD - 정보처리기능사:', 'cert_processor_desc': '대한민국 국가 기술 자격증.',
+                'cert_adsp_title': 'KDATA - ADSP (데이터 분석 준전문가):', 'cert_adsp_desc': '데이터 분석 및 처리 자격증.', // <-- FIXED
+                'cert_opic_title': 'OPIC IH (오픽 IH):', 'cert_opic_desc': '말하기 시험 점수.',
+                'cert_ielts_title': 'IELTS 6.5 모의 테스트 점수:', 'cert_ielts_desc': '영어 능력 시험 점수.',
+                'h2_langs': '언어',
+                'lang_kor_title': '한국어:', 'lang_kor_desc': '원어민.',
+                'lang_eng_title': '영어:', 'lang_eng_desc': '상급 (IELTS 6.5 레벨 상당).',
+                'h2_links': '온라인 활동',
+                'link_linkedin': '링크드인:', 'link_huggingface': '허깅페이스:', 'link_github': 'GitHub:',
+            },
+            'jp': {
+                'title_suffix': 'JP',
+                'header_name': 'イ・スンウォン (Simon Lee)',
+                'nav_summary': '概要', 'nav_projects': 'プロジェクト', 'nav_certs': '資格', 'nav_links': 'リンク',
+                'contact_location': '場所',
+                'h2_summary': '概要',
+                'p_summary_1': '皆さん、こんにちは、良い一日を！現在、Pythonの学習よりも、汎用的なコンピューター科学分野全体を学習することにしました。特に、ロボティクスとバイオエンジニアリングの分野に熱心に取り組んでいます。',
+                'p_summary_2': '私は現在、グローバルな規模でコンピュータサイエンスのキャリアを進展させる機会を探しています。',
+                'btn_focus': '主要な焦点を見る',
+                'alert_focus': '主要な焦点：ロボティクス、バイオエンジニアリング、および一般コンピューター科学。',
+                'h2_projects': 'プロジェクト',
+                'proj_title_1': 'SPIED2024 時間増加横断歩道', 'proj_desc_1': 'IRE ASIAコンソーシアム認定グランプリ：歩行者との動的タイマーインタラクティブ機能を備えた顔認識およびシステム。',
+                'proj_title_2': 'ARC-2025プロジェクト', 'proj_desc_2': '最終エントリースコア：1456点中179点', 
+                'proj_title_3': 'RaspberryPi ロボティクスプロジェクト', 'proj_desc_3': 'Raspberry Piを使用したハードウェア制御とシステム統合。',
+                'proj_title_4': '自動運転物体検出プロジェクト', 'proj_desc_4': '自律システム向けのYOLOv5を使用した物体検出技術の実装。',
+                'proj_title_5': '衛星画像に基づく時系列予測プロジェクト', 'proj_desc_5': '衛星画像から派生した時系列データに基づくモデリングと予測。',
+                'proj_title_6': 'BioPythonプロジェクト', 'proj_desc_6': 'BioPythonライブラリを利用した遺伝子解析のための計算生物学プロジェクト。',
+                'proj_title_7': '暗号通貨ベースのクオンツプロジェクト', 'proj_desc_7': '暗号通貨市場に焦点を当てた定量分析および取引戦略の開発。',
+                'h2_certs': '資格',
+                'cert_processor_title': 'HRD - 情報処理産業技能士:', 'cert_processor_desc': '韓国の国家技術資格。',
+                'cert_adsp_title': 'KDATA - ADSP (データ分析準専門家):', 'cert_adsp_desc': 'データ分析および処理資格。', // <-- FIXED
+                'cert_opic_title': 'OPIC IH (オーピック IH):', 'cert_opic_desc': 'スピーキングテストのスコア。',
+                'cert_ielts_title': 'IELTS 6.5 模擬テストスコア:', 'cert_ielts_desc': '英語能力試験のスコア。',
+                'h2_langs': '言語',
+                'lang_kor_title': '韓国語:', 'lang_kor_desc': 'ネイティブ。',
+                'lang_eng_title': '英語:', 'lang_eng_desc': '上級 (IELTS 6.5レベル相当)。',
+                'h2_links': 'オンラインプレゼンス',
+                'link_linkedin': 'LinkedIn:', 'link_huggingface': 'HuggingFace:', 'link_github': 'GitHub:',
+            },
+            'chn': {
+                'title_suffix': 'CHN',
+                'header_name': '李承洹 (Simon Lee)',
+                'nav_summary': '概要', 'nav_projects': '项目', 'nav_certs': '证书', 'nav_links': '链接',
+                'contact_location': '位置',
+                'h2_summary': '概要',
+                'p_summary_1': '大家好，祝您有美好的一天！我现在不再专注于学习Python。相反，我决定学习整个通用计算机科学领域。特别是，热情地探索机器人技术和生物工程领域。',
+                'p_summary_2': '我目前正在寻求在全球范围内发展我的计算机科学职业生涯的机会。',
+                'btn_focus': '查看核心焦点',
+                'alert_focus': '核心焦点: 机器人技术、生物工程和通用计算机科学。',
+                'h2_projects': '项目',
+                'proj_title_1': 'SPIED2024 延时增加人行横道', 'proj_desc_1': 'IRE ASIA 联盟认证大奖：具有动态定时器与行人交互的面部识别系统。',
+                'proj_title_2': 'ARC-2025 项目', 'proj_desc_2': '最终参赛分数 : 1456 分中的 179 分', 
+                'proj_title_3': 'RaspberryPi 机器人项目', 'proj_desc_3': '使用 Raspberry Pi 进行硬件控制和系统集成。',
+                'proj_title_4': '自动驾驶物体检测项目', 'proj_desc_4': '实现物体检测技术，可能使用 YOLOv5 进行自动驾驶系统。',
+                'proj_title_5': '基于卫星图像的时间序列预测项目', 'proj_desc_5': '基于卫星图像派生的时间序列数据的建模和预测。',
+                'proj_title_6': 'BioPython 项目', 'proj_desc_6': '利用 BioPython 库进行遗传分析的计算生物学项目。',
+                'proj_title_7': '基于加密货币的量化项目', 'proj_desc_7': '专注于加密货币市场的定量分析和交易策略开发。',
+                'h2_certs': '证书',
+                'cert_processor_title': 'HRD - 工业信息处理师:', 'cert_processor_desc': '韩国国家技术资格。',
+                'cert_adsp_title': 'KDATA - ADSP (数据分析准专业人员):', 'cert_adsp_desc': '数据分析和处理认证。', // <-- FIXED
+                'cert_opic_title': 'OPIC IH (口语水平测试 - 电脑):', 'cert_opic_desc': '口语考试成绩。',
+                'cert_ielts_title': 'IELTS 6.5 模拟考试成绩:', 'cert_ielts_desc': '英语能力考试成绩。',
+                'h2_langs': '语言',
+                'lang_kor_title': '韩语:', 'lang_kor_desc': '母语。',
+                'lang_eng_title': '英语:', 'lang_eng_desc': '高级 (相当于IELTS 6.5级)。',
+                'h2_links': '在线形象',
+                'link_linkedin': '领英:', 'link_huggingface': 'HuggingFace:', 'link_github': 'GitHub:',
+            }
+        };
 
-  <!-- footer section -->
-  <footer class="container-fluid footer_section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-7 col-md-9 mx-auto">
-          <p>
-            &copy; 2024 Restrict Rights Reserved By Simon Lee
-            <a href="https://html.design/">Referenced: Free Html Templates</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- footer section -->
+        let currentLang = 'en';
+
+        // Function to update all text content based on the selected language
+        function updateContent(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+
+            // 1. Update Title and Header Name
+            document.getElementById('page-title').textContent = `Simon Lee | General Resume | ${t.title_suffix}`;
+            document.getElementById('header-name').textContent = t.header_name; // Set the H1 name dynamically
+            
+            // 2. Update Elements using data-key (Nav, H2, Certs, Langs, Projects, etc.)
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (key !== 'header_name' && t[key]) { // Skip header_name here as it's updated above
+                    el.innerHTML = t[key]; // Use innerHTML to allow for bold/italic/links in translation strings
+                }
+            });
+
+            // 3. Update Paragraphs and Button
+            document.getElementById('p_summary_1').innerHTML = t.p_summary_1;
+            document.getElementById('p_summary_2').innerHTML = t.p_summary_2;
+            document.getElementById('alert-button').setAttribute('data-alert-text', t.alert_focus);
+            
+            // Update active button state
+            document.querySelectorAll('.lang-button').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+        }
 
 
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize content to English (default)
+            updateContent(currentLang);
 
+            // 1. Language Switcher Logic
+            document.querySelectorAll('.lang-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const newLang = this.getAttribute('data-lang');
+                    updateContent(newLang);
+                });
+            });
+            
+            // 2. Smooth Navigation Feature
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // 3. Button OnClick Method
+            const alertButton = document.getElementById('alert-button');
+            if (alertButton) {
+                alertButton.addEventListener('click', () => {
+                    // Get the dynamic alert text from the data attribute
+                    const alertText = alertButton.getAttribute('data-alert-text');
+                    alert(alertText);
+                });
+            }
+        });
+    </script>
 </body>
-
 </html>
