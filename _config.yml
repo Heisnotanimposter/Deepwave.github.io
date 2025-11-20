@@ -1,6 +1,6 @@
 title: Page
 description:
-baseurl: "/docs" # the subpath of your site, e.g. /blog
+baseurl: "./" # the subpath of your site, e.g. /blog
 url: "https://Heisnotanimposter.github.io" # the base hostname & protocol for your site
 theme: jekyll-theme-minimal
 plugins:
