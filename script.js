@@ -15,12 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 2. Button OnClick Method
-    const alertButton = document.getElementById('alert-button');
-    if (alertButton) {
-        alertButton.addEventListener('click', () => {
-            alert('🚀 Quick Fact: Robotics relies heavily on object-oriented programming (OOP) in Python for complex control structures!');
-        });
-    }
+    //const alertButton = document.getElementById('alert-button');
+    //if (alertButton) {
+        //alertButton.addEventListener('click', () => {
+            //alert('🚀 Quick Fact: Robotics relies heavily on object-oriented programming (OOP) in Python for complex control structures!');
+        //});
+    //}
 
     // 3. Hyperlink features are handled directly in HTML (mailto, target="_blank").
+    
 });

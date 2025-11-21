@@ -78,7 +78,6 @@
             color: white;
         }
 
-
         .nav-link {
             color: white;
             text-decoration: none;
@@ -160,10 +159,10 @@
         }
         
         /* Button OnClick Method Styling */
-        .action-area {
+        /*.action-area {
             text-align: center;
             margin-top: 20px;
-        }
+        }*/
 
         .action-button {
             background-color: var(--primary-color);
@@ -199,6 +198,7 @@
             <div>
                 <a href="#summary-sec" class="nav-link" data-key="nav_summary">Summary</a>
                 <a href="#projects-sec" class="nav-link" data-key="nav_projects">Projects</a>
+                <a href="#running-projects-sec" class="nav-link" data-key="nav_running_projects">Running Services</a>
                 <a href="#certs-sec" class="nav-link" data-key="nav_certs">Certifications</a>
                 <a href="#links-sec" class="nav-link" data-key="nav_links">Links</a>
             </div>
@@ -232,9 +232,7 @@
             <p id="p_summary_1" class="animated-text">Hello, guys, have a good day! I am not currently focused on studying Python. Instead, I decide to study the entire general computer field. Especially, passionately exploring the field of Robotics and BioEngineering.</p>
             <p id="p_summary_2" style="margin-top: 10px;">I am currently seeking opportunities to advance my computer science career on a global scale.</p>
             
-            <div class="action-area">
-                <button id="alert-button" class="action-button" data-key="btn_focus">View Core Focus</button>
-            </div>
+
         </section>
 
         <section class="section" id="projects-sec">
@@ -280,6 +278,21 @@
                 <p>GitHub: <a href="https://github.com/Heisnotanimposter/Upbit-Quant" target="_blank">Heisnotanimposter/Upbit-Quant</a></p>
             </div>
 
+        </section>
+
+        <section class="section" id="running-projects-sec">
+            <h2 data-key="h2_running_projects">Running Services (Active Apps)</h2> 
+            
+            <div class="project-item">
+                <h3 data-key="app_title_1">AutoML Ops Platform</h3>
+                <p data-key="app_desc_1">A live operational service showcasing automated machine learning deployment pipelines.</p>
+                <p>Service URL: <a href="https://automl-ops-platform-325161758424.us-west1.run.app/" target="_blank">https://automl-ops-platform-325161758424.us-west1.run.app/</a></p>
+            </div>
+            <div class="project-item">
+                <h3 data-key="app_title_2">MarketPulse Sentiment Analysis</h3>
+                <p data-key="app_desc_2">A stock market sentiment analysis application providing real-time market insights.</p>
+                <p>Service URL: <a href="https://marketpulse-533270964817.us-west1.run.app/" target="_blank">https://marketpulse-533270964817.us-west1.run.app/</a></p>
+            </div>
         </section>
         
         <section class="section" id="certs-sec">
@@ -338,7 +351,7 @@
                 'h2_summary': 'Summary',
                 'p_summary_1': 'Hello, guys, have a good day! I am not currently focused on studying Python. Instead, I decide to study the entire general computer field. Especially, passionately exploring the field of Robotics and BioEngineering.',
                 'p_summary_2': 'I am currently seeking opportunities to advance my computer science career on a global scale.',
-                'btn_focus': 'View Core Focus',
+                'btn_focus': '',
                 'alert_focus': 'Core Focus: Robotics, BioEngineering, and General Computer Science.',
                 'h2_projects': 'Projects',
                 'proj_title_1': 'SPIED2024 TimeIncreasingCrosswalk', 'proj_desc_1': 'IRE ASIA Consortium certified GrandPrize: Face Recognition and System with dynamic timer interactive to crosswalkers.',
@@ -470,7 +483,6 @@
             // 3. Update Paragraphs and Button
             document.getElementById('p_summary_1').innerHTML = t.p_summary_1;
             document.getElementById('p_summary_2').innerHTML = t.p_summary_2;
-            document.getElementById('alert-button').setAttribute('data-alert-text', t.alert_focus);
             
             // Update active button state
             document.querySelectorAll('.lang-button').forEach(btn => {
@@ -480,7 +492,6 @@
                 }
             });
         }
-
 
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize content to English (default)
